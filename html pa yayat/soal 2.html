@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gema Ramadhan</title>
+
+  <style>
+    *{
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background: #ffffff;
+      padding: 30px 40px;
+    }
+
+    .wrap{
+      width: 920px;
+    }
+
+    table{
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .payroll th,
+    .payroll td{
+      border: 2px solid #000;
+      padding: 8px 10px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .payroll .no{
+      background: #6a1b9a;
+      color: #000;
+      width: 70px;
+    }
+
+    .payroll .nama{
+      background: #f28c28;
+      color: #000;
+    }
+
+    .payroll .tunjangan{
+      background: #7cb342;
+      color: #000;
+    }
+
+    .payroll .gaji{
+      background: #3f6fb5;
+      color: #000;
+      width: 170px;
+    }
+
+    .payroll .total{
+      background: #000;
+      color: #fff;
+      width: 130px;
+    }
+
+    .payroll .subhead{
+      background: #fff;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .payroll .blank{
+      height: 34px;
+      background: #fff;
+      font-weight: normal;
+    }
+
+    .payroll .totalrow td{
+      background: #bdbdbd;
+      font-weight: bold;
+      height: 40px;
+    }
+
+    .payroll .totalrow .total-label{
+      text-align: center;
+    }
+
+    /* spacing */
+    .space{
+      height: 60px;
+    }
+
+    .form-box{
+      width: 470px;
+    }
+
+    .form-table{
+      width: 470px;
+    }
+
+    .form-table td,
+    .form-table th{
+      border: 2px solid #000;
+      padding: 8px 10px;
+      vertical-align: top;
+      font-weight: bold;
+    }
+
+    .form-title{
+      background: #6a1b9a;
+      color: #000;
+      text-align: center;
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .lbl-nama{ background: #f28c28; width: 170px; }
+    .lbl-tempat{ background: #1e88e5; width: 170px; color:#000; }
+    .lbl-jk{ background: #ffcc00; width: 170px; }
+    .lbl-kelas{ background: #7cb342; width: 170px; }
+    .lbl-alamat{ background: #000; width: 170px; color:#000; }
+
+    .colon{
+      width: 25px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .field{
+      background: #fff;
+      width: 275px;
+    }
+
+    input[type="text"]{
+      width: 190px;
+      height: 28px;
+      border: 2px inset #cfcfcf;
+      outline: none;
+      padding: 3px 6px;
+      font-weight: normal;
+    }
+
+    textarea{
+      width: 190px;
+      height: 75px;
+      border: 2px inset #cfcfcf;
+      outline: none;
+      resize: none;
+      padding: 6px;
+      font-weight: normal;
+    }
+
+    select{
+      width: 130px;
+      height: 30px;
+      border: 2px inset #cfcfcf;
+      outline: none;
+      font-weight: normal;
+    }
+
+    .radio-wrap{
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-top: 4px;
+      font-weight: normal;
+    }
+
+    .submit-row td{
+      height: 55px;
+      background: #fff;
+    }
+
+    button{
+      padding: 10px 45px;
+      border: 2px solid #777;
+      background: #e9e9e9;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 0 #bdbdbd;
+    }
+
+    button:active{
+      transform: translateY(1px);
+      box-shadow: 0 1px 0 #bdbdbd;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <table class="payroll">
+      <tr>
+        <th class="no" rowspan="2">NO</th>
+        <th class="nama" colspan="2">NAMA LENGKAP</th>
+        <th class="tunjangan" colspan="3">TUNJANGAN</th>
+        <th class="gaji" rowspan="2">GAJIH</th>
+        <th class="total" rowspan="2">TOTAL</th>
+      </tr>
+
+      <tr>
+        <th class="subhead">DEPAN</th>
+        <th class="subhead">BELAKANG</th>
+        <th class="subhead">ANAK</th>
+        <th class="subhead">ISTRI</th>
+        <th class="subhead">TRANSPORT</th>
+      </tr>
+
+      <tr>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+        <td class="blank"></td>
+      </tr>
+
+      <tr class="totalrow">
+        <td></td>
+        <td class="total-label" colspan="2">TOTAL</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
+
+    <div class="space"></div>
+
+    <div class="form-box">
+      <table class="form-table">
+        <tr>
+          <th class="form-title" colspan="3">Form Input Siswa</th>
+        </tr>
+
+        <tr>
+          <td class="lbl-nama">Nama</td>
+          <td class="colon">:</td>
+          <td class="field">
+            <input type="text" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lbl-tempat">Tempat Lahir</td>
+          <td class="colon">:</td>
+          <td class="field">
+            <input type="text" />
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lbl-jk">Jenis Kelamin</td>
+          <td class="colon">:</td>
+          <td class="field">
+            <div class="radio-wrap">
+              <label><input type="radio" name="jk" /> Laki-Laki</label>
+              <label><input type="radio" name="jk" /> Perempuan</label>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lbl-kelas">Kelas</td>
+          <td class="colon">:</td>
+          <td class="field">
+            <select>
+              <option></option>
+              <option>X RPL 1</option>
+              <option>X RPL 2</option>
+              <option>XI RPL 1</option>
+              <option>XII RPL 1</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="lbl-alamat">Alamat</td>
+          <td class="colon">:</td>
+          <td class="field">
+            <textarea></textarea>
+          </td>
+        </tr>
+
+        <tr class="submit-row">
+          <td></td>
+          <td></td>
+          <td style="text-align:center;">
+            <button type="button">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+</body>
+</html>
